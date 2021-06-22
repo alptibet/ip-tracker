@@ -1,0 +1,22 @@
+.header {
+  background-image: url(../../assets/pattern-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__heading {
+    color: $white;
+    text-align: center;
+    padding: 3rem 0;
+  }
+
+  &__form {
+    //
+  }
+
+  &__button {
+    //
+  }
+}
