@@ -1,15 +1,19 @@
 {
   "name": "ip-tracker",
   "version": "1.0.0",
-  "description": "IP tracking application",
+  "description": "IP address tracking application",
+  "main": "index.html",
   "scripts": {
-    "start": "parcel index.html"
+    "devserver": "live-server --no-browser",
+    "watch:sass": "sass --no-source-map --watch sass/main.scss:style.css",
+    "start": "npm-run-all --parallel devserver watch:sass"
   },
   "author": "Alp Tibet",
   "license": "ISC",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.0.0-beta.3.1",
-    "parcel": "^2.0.0-beta.3.1"
+    "sass": "^1.32.13"
   },
-  "dependencies": {}
+  "dependencies": {
+    "npm-run-all": "^4.1.5"
+  }
 }
