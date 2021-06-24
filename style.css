@@ -107,6 +107,7 @@ html {
   left: 50%;
   top: 28rem;
   transform: translateX(-50%);
+  z-index: 500;
 }
 .info div {
   margin-top: 2rem;
@@ -117,5 +118,4 @@ html {
 
 .map {
   height: calc(100vh - 29rem);
-  background-color: red;
 }
