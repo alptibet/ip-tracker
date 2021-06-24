@@ -11,8 +11,24 @@ h1 {
 }
 
 input {
-  font-size: 2.8rem;
+  font-size: 1.8rem;
   font-family: "Rubik", sans-serif;
+}
+
+.info p {
+  text-align: center;
+}
+.info__title {
+  text-transform: uppercase;
+  color: #969696;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+.info__content {
+  font-weight: 500;
+  font-size: 1.8rem;
 }
 
 *,
@@ -32,6 +48,7 @@ html {
   width: 100%;
   max-width: 375px;
   margin: 0 auto;
+  position: relative;
 }
 
 .header {
@@ -41,21 +58,61 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  height: 29rem;
+}
+.header__heading {
+  margin: 3rem auto;
 }
 .header__items {
-  width: 80%;
+  width: 85%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.header__items-form {
-  flex-basis: 70%;
-}
-.header__items-form-form-input {
+.header__items-form-input {
+  margin-right: auto;
+  width: 120%;
+  padding: 1.8rem;
   border: none;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  cursor: pointer;
+}
+.header__items-form-input:focus {
+  outline: none;
 }
 .header__items-btn {
-  flex-basis: 30%;
+  margin-left: auto;
+  background-color: #2b2b2b;
+  padding: 3rem;
+  background-image: url("../../assets/icon-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20%;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.info {
+  margin-top: -10rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #fff;
+  width: 85%;
+  position: absolute;
+  left: 50%;
+  top: 28rem;
+  transform: translateX(-50%);
+}
+.info div {
+  margin-top: 2rem;
+}
+.info div:last-child {
+  margin-bottom: 2rem;
+}
+
+.map {
+  height: calc(100vh - 29rem);
+  background-color: red;
 }
