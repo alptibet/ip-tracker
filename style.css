@@ -46,7 +46,7 @@ html {
 
 .container {
   width: 100%;
-  max-width: 375px;
+  max-width: 600px;
   margin: 0 auto;
   position: relative;
 }
@@ -70,9 +70,12 @@ html {
   align-items: center;
   justify-content: center;
 }
+.header__items-form {
+  width: 100%;
+}
 .header__items-form-input {
   margin-right: auto;
-  width: 120%;
+  width: 100%;
   padding: 1.8rem;
   border: none;
   border-top-left-radius: 10px;
