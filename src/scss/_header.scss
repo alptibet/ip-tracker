@@ -6,17 +6,25 @@
   flex-direction: column;
   align-items: center;
 
-  &__heading {
-    color: $white;
-    text-align: center;
-    padding: 3rem 0;
-  }
+  &__items {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  &__form {
-    //
-  }
+    &-form {
+      // flex: 0 0 50%;
+      flex-basis: 70%;
+      &-form-input {
+        border: none;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+    }
 
-  &__button {
-    //
+    &-btn {
+      // flex: 0 0 20%;
+      flex-basis: 30%;
+    }
   }
 }
