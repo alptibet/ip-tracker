@@ -14,6 +14,7 @@ export const addHandlerSubmit = function (handler) {
   const form = parentElement.querySelector('form');
   form.addEventListener('submit', function (event) {
     const searchTerm = searchField.value;
+    console.log(searchTerm);
     handler(searchTerm);
     clear();
   });
