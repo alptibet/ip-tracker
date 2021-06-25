@@ -16,13 +16,15 @@ export const getOwnInfo = async function () {
     return resolve.ip;
   } catch (error) {
     alert('Could not get your IP address');
-    console.log(error);
   }
 };
 
 export const getData = async function (address) {
+  const regexIp = new RegExp(`^([0-9]{1,3}\.){3}[0-9]{1,3}$`, 'g');
+  const search = regexIp.test(address) === true ? 'ipAddress' : 'domain';
+
   try {
-    const response = await fetch(`https://geo.ipify.org/api/v1?apiKey=${APIkey}&ipAddress=${address}`);
+    const response = await fetch(`https://geo.ipify.org/api/v1?apiKey=${APIkey}&${search}=${address}`);
     const data = await response.json();
     state.ipAddress = address;
     state.isp = data.isp;
@@ -30,9 +32,7 @@ export const getData = async function (address) {
     state.timeZone = data.location.timezone;
     state.lat = data.location.lat;
     state.lng = data.location.lng;
-    console.log(data);
   } catch (error) {
     alert('Could not find domain information');
-    console.log(error);
   }
 };
