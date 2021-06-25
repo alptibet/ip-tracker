@@ -6,8 +6,6 @@ import { renderInfo } from './views/viewRenderInfo.js';
 
 const controlGetOwnInfo = function () {
   model.getOwnInfo();
-  const addr = model.ipAddress;
-  console.log(addr);
 };
 
 const controlSubmit = function (address) {

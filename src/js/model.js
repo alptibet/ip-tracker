@@ -1,22 +1,22 @@
 const APIkey = 'at_fheesH5ez5EDUhR0XFdMNoAxuYoQy';
 
-export const ipAddress = '';
+export const state = {
+  ipAddress: '',
+  location: '',
+  timeZone: '',
+  isp: '',
+  domain: '',
+};
 
 export const getOwnInfo = async function () {
   try {
     const response = await fetch('http://api.ipify.org/?format=json');
     const resolve = await response.json();
-    const addr = resolve.ip;
-    setOwnInfo(addr);
+    state.ipAddress = resolve.ip;
   } catch (error) {
     alert('Could not get your IP address');
+    console.log(error);
   }
-};
-
-const setOwnInfo = function (addr) {
-  console.log(addr);
-  ipAddress = addr;
-  console.log(ipAddress);
 };
 
 export const getData = async function (address) {
