@@ -20,6 +20,7 @@ export const getOwnInfo = async function () {
 };
 
 export const getData = async function (address) {
+  console.log(address);
   const regexIp = new RegExp(`^([0-9]{1,3}\.){3}[0-9]{1,3}$`, 'g');
   const search = regexIp.test(address) === true ? 'ipAddress' : 'domain';
 
@@ -34,5 +35,6 @@ export const getData = async function (address) {
     state.lng = data.location.lng;
   } catch (error) {
     alert('Could not find domain information');
+    console.log(error);
   }
 };
