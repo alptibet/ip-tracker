@@ -21,10 +21,10 @@ export const getOwnInfo = async function () {
 
 export const getData = async function (address) {
   console.log(address);
-  const regexIp = new RegExp(`^([0-9]{1,3}\.){3}[0-9]{1,3}$`, 'g');
-  const search = regexIp.test(address) === true ? 'ipAddress' : 'domain';
 
   try {
+    const regexIp = new RegExp(`^([0-9]{1,3}\.){3}[0-9]{1,3}$`, 'g');
+    const search = regexIp.test(address) === true ? 'ipAddress' : 'domain';
     const response = await fetch(`https://geo.ipify.org/api/v1?apiKey=${APIkey}&${search}=${address}`);
     const data = await response.json();
     state.ipAddress = data.ip;
@@ -34,7 +34,7 @@ export const getData = async function (address) {
     state.lat = data.location.lat;
     state.lng = data.location.lng;
   } catch (error) {
-    alert('Could not find domain information');
-    console.log(error);
+    // alert('Could not find domain information');
+    console.error(error);
   }
 };
