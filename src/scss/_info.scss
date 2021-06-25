@@ -12,6 +12,10 @@
 
   & div {
     margin-top: 2rem;
+
+    & p {
+      overflow-wrap: break-word;
+    }
   }
 
   & div:last-child {

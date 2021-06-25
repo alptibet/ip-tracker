@@ -5,14 +5,15 @@ export const state = {
   location: '',
   timeZone: '',
   isp: '',
-  domain: '',
+  lat: '',
+  lng: '',
 };
 
 export const getOwnInfo = async function () {
   try {
     const response = await fetch('http://api.ipify.org/?format=json');
     const resolve = await response.json();
-    state.ipAddress = resolve.ip;
+    return resolve.ip;
   } catch (error) {
     alert('Could not get your IP address');
     console.log(error);
@@ -20,13 +21,18 @@ export const getOwnInfo = async function () {
 };
 
 export const getData = async function (address) {
-  console.log(address);
   try {
     const response = await fetch(`https://geo.ipify.org/api/v1?apiKey=${APIkey}&ipAddress=${address}`);
     const data = await response.json();
+    state.ipAddress = address;
+    state.isp = data.isp;
+    state.location = data.location.city;
+    state.timeZone = data.location.timezone;
+    state.lat = data.location.lat;
+    state.lng = data.location.lng;
     console.log(data);
-    return data;
   } catch (error) {
     alert('Could not find domain information');
+    console.log(error);
   }
 };

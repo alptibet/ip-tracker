@@ -5,11 +5,17 @@ import { renderMap } from './views/viewRenderMap.js';
 import { renderInfo } from './views/viewRenderInfo.js';
 
 const controlGetOwnInfo = function () {
-  model.getOwnInfo();
+  model
+    .getOwnInfo()
+    .then(res => model.getData(res))
+    .then(res => renderInfo(model.state));
 };
 
 const controlSubmit = function (address) {
-  model.getData(address);
+  model.getData(address).then(res => {
+    renderInfo(model.state);
+    renderMap(model.state.lat, model.state.lng);
+  });
 };
 
 const init = function () {
