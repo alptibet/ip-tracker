@@ -6,12 +6,48 @@
   width: 85%;
   position: absolute;
   left: 50%;
-  top: 28rem;
+  top: 32rem;
   transform: translateX(-50%);
   z-index: 500;
 
+  @include respond(tablet) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+  }
+
+  @include respond(desktop) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+  }
+
   & div {
     margin-top: 2rem;
+
+    @include respond(tablet) {
+      margin-top: 0;
+      padding: 4rem;
+      flex: 1 1 0px;
+      text-align: center;
+
+      &:not(:last-child) {
+        border-right: 1px solid $dark-gray;
+      }
+    }
+
+    @include respond(desktop) {
+      margin-top: 0;
+      padding: 4rem;
+      flex: 1 1 0px;
+      text-align: center;
+
+      &:not(:last-child) {
+        border-right: 1px solid $dark-gray;
+      }
+    }
 
     & p {
       overflow-wrap: break-word;
@@ -20,5 +56,13 @@
 
   & div:last-child {
     margin-bottom: 2rem;
+
+    @include respond(tablet) {
+      margin-bottom: 0;
+    }
+
+    @include respond(desktop) {
+      margin-bottom: 0;
+    }
   }
 }

@@ -16,4 +16,12 @@ html {
   max-width: 600px;
   margin: 0 auto;
   position: relative;
+
+  @include respond(tablet) {
+    max-width: 900px;
+  }
+
+  @include respond(desktop) {
+    max-width: 1440px;
+  }
 }

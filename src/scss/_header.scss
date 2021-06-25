@@ -18,8 +18,17 @@
     align-items: center;
     justify-content: center;
 
+    @include respond(tablet) {
+      width: 50%;
+    }
+
+    @include respond(desktop) {
+      width: 50%;
+    }
+
     &-form {
       width: 100%;
+
       &-input {
         margin-right: auto;
         width: 100%;
@@ -44,6 +53,14 @@
       background-size: 20%;
       border-bottom-right-radius: 10px;
       border-top-right-radius: 10px;
+
+      @include respond(tablet) {
+        padding: 3.3rem;
+      }
+
+      @include respond(tablet) {
+        padding: 3.3rem;
+      }
     }
   }
 }

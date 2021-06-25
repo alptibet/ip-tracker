@@ -26,7 +26,7 @@ export const getData = async function (address) {
   try {
     const response = await fetch(`https://geo.ipify.org/api/v1?apiKey=${APIkey}&${search}=${address}`);
     const data = await response.json();
-    state.ipAddress = address;
+    state.ipAddress = data.ip;
     state.isp = data.isp;
     state.location = data.location.city;
     state.timeZone = data.location.timezone;

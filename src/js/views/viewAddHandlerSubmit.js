@@ -11,6 +11,13 @@ export const addHandlerSubmit = function (handler) {
     clear();
   });
 
+  const form = parentElement.querySelector('form');
+  form.addEventListener('submit', function (event) {
+    const searchTerm = searchField.value;
+    handler(searchTerm);
+    clear();
+  });
+
   function clear() {
     searchField.value = '';
   }
