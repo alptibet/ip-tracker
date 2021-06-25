@@ -6,51 +6,79 @@
   width: 85%;
   position: absolute;
   left: 50%;
-  top: 32rem;
+  top: 29rem;
   transform: translateX(-50%);
   z-index: 500;
 
   @include respond(tablet) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 80%;
   }
 
   @include respond(desktop) {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     width: 80%;
   }
 
+  // @include respond(desktop) {
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   width: 80%;
+  // }
+
   & div {
     margin-top: 2rem;
+    text-align: center;
+
+    @include respond(desktop) {
+      &:not(:last-child) > .info__content {
+        border-right: 1px solid $dark-gray;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+    }
 
     @include respond(tablet) {
       margin-top: 0;
-      padding: 4rem;
+      padding: 1rem;
       flex: 1 1 0px;
-      text-align: center;
 
-      &:not(:last-child) {
-        border-right: 1px solid $dark-gray;
-      }
+      // &:not(:last-child) {
+      //   border-right: 1px solid $dark-gray;
+      // }
     }
 
     @include respond(desktop) {
       margin-top: 0;
-      padding: 4rem;
+      // padding: 2rem;
       flex: 1 1 0px;
-      text-align: center;
 
-      &:not(:last-child) {
-        border-right: 1px solid $dark-gray;
-      }
+      // &:not(:last-child) {
+      //   border-right: 1px solid $dark-gray;
+      // }
     }
+
+    // @include respond(desktop) {
+    //   margin-top: 0;
+    //   padding: 4rem;
+    //   flex: 1 1 0px;
+    //   text-align: left;
+
+    //   &:not(:last-child) {
+    //     border-right: 1px solid $dark-gray;
+    //   }
+    // }
 
     & p {
       overflow-wrap: break-word;
+      text-align: center;
+
+      @include respond(desktop) {
+        text-align: left;
+        padding-top: 1rem;
+      }
     }
   }
 

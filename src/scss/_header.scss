@@ -19,7 +19,7 @@
     justify-content: center;
 
     @include respond(tablet) {
-      width: 50%;
+      width: 80%;
     }
 
     @include respond(desktop) {
