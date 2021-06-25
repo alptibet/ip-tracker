@@ -11,7 +11,7 @@ export const state = {
 
 export const getOwnInfo = async function () {
   try {
-    const response = await fetch('http://api.ipify.org/?format=json');
+    const response = await fetch('https://api.ipify.org/?format=json');
     const resolve = await response.json();
     return resolve.ip;
   } catch (error) {
