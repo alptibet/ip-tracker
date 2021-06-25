@@ -34,7 +34,6 @@ export const getData = async function (address) {
     state.lat = data.location.lat;
     state.lng = data.location.lng;
   } catch (error) {
-    // alert('Could not find domain information');
-    console.error(error);
+    alert('Could not find domain information');
   }
 };
